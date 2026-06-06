@@ -1,5 +1,62 @@
 @import "tailwindcss";
 
 body {
-    background-color: #D8E2DC;
+  background-color: #D8E2DC;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+.create-wish-page,
+.edit-wish-page,
+.wish-page,
+.wish-list-page {
+  background-color: white;
+  border: 2px solid #A5A58D;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 30px auto;
+  width: 70%;
+}
+
+h1 {
+  text-align: center;
+  color: #6B705C;
+}
+
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #A5A58D;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+
+
+button {
+  background-color: #A5A58D;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #6B705C;
+  cursor: pointer;
+}
+
+
+.wish-card {
+  background-color: #FFE8D6;
+  border: 1px solid #DDBEA9;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
 }
