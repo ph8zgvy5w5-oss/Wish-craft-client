@@ -9,6 +9,7 @@ import Profile from "./pages/Profile"
 import VisionBoard from "./pages/VisionBoard"
 import WishListe from "./pages/WishList"
 import WishPage from "./pages/WishPage"
+
 function App() {
 
   return (
@@ -23,7 +24,7 @@ function App() {
         <Route path='/user' element={<Profile />} />
         <Route path='/board' element={<VisionBoard />} />
         <Route path='/calendar' element={<Calendar />} />
-        <Route path='/' element={<NotFound />} />
+        <Route path='/*' element={<NotFound />} />
       </Routes>
 
     </>
