@@ -6,7 +6,7 @@ return(
   <div>{percent}%</div>
 </div>
 <div className="w-100 h-2 bg-gray-300 rounded-full overflow-hidden">
-<div className="bg-powder-blush h-full" style={{width:`${percent}%`}}></div>
+<div className="bg-powder-blush rounded-full h-full" style={{width:`${percent}%`}}></div>
 </div>
 </div>
 )

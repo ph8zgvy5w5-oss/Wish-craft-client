@@ -5,7 +5,11 @@ import App from './App.jsx'
 import { BrowserRouter as Router } from 'react-router-dom'
 import WishProvider from './context/Wish.context.jsx'
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
+ <StrictMode>
+   <Router >
+    <WishProvider>
+      <App />
+    </WishProvider>
+   </Router>
   </StrictMode>
 )

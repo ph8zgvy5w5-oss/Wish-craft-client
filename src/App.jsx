@@ -1,21 +1,23 @@
-import './index.css'
-import { Routes, Route } from "react-router-dom"
-import HomePage from "./pages/HomePage"
-import NotFound from "./pages/NotFound"
-import Calendar from "./pages/Calendar"
-import FormPage from "./pages/FormPage"
-import About from "./pages/About"
-import Profile from "./pages/Profile"
-import VisionBoard from "./pages/VisionBoard"
-import WishListe from "./pages/WishList"
-import WishPage from "./pages/WishPage"
-
+import './index.css';
+import { Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import NotFound from "./pages/NotFound";
+import Calendar from "./pages/Calendar";
+import FormPage from "./pages/FormPage";
+import About from "./pages/About";
+import Profile from "./pages/Profile";
+import VisionBoard from "./pages/VisionBoard";
+import WishList from "./pages/WishList";
+import WishPage from "./pages/WishPage";
+import Navbar from "./components/Navbar";
+import Sidebar from './components/Sidebar';
+import Footer from './components/Footer';
 function App() {
 
   return (
     <>
       <Navbar/>
-      <div className='flex h-screen w-full'>
+      <div className='flex h-screen w-full bg-seashell'>
       <Sidebar/>
       <Routes>
         <Route path='/' element={<HomePage />} />
@@ -29,6 +31,7 @@ function App() {
         <Route path='/*' element={<NotFound />} />
       </Routes>
       </div>
+      <Footer/>
     </>
   )
 }
