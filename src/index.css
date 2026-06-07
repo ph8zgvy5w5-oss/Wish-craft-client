@@ -1,5 +1,58 @@
 @import "tailwindcss";
 
+/* --radius-*   → rounded-*
+--color-*    → text-*, bg-*, border-*
+--spacing-*  → p-*, m-*, gap-* */
+
+@theme {
+  --color-powder-blush: #FEC5BB;
+  --color-almond-silk: #FCD5CE;
+  --color-soft-blush: #fae1dd;
+  --color-seashell: #f8edeb;
+
+  --color-alabaster-grey-100: #e8e8e4;
+  --color-alabaster-grey-200: #d8e2dc;
+
+  --color-soft-linen: #ece4db;
+  --color-powder-petal: #ffe5d9;
+  --color-peach-fuzz: #ffd7ba;
+  --color-peach-glow: #fec89a;
+  --radius-1: 9999px;
+  --radius-2: 40px;
+  --radius-3: 32px;
+  --radius-4: 24px;
+  --radius-5: 14px;
+  --radius-6: 8px;
+}
+
+
 body {
     background-color: #D8E2DC;
 }
+
+.loader {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: block;
+  margin:15px auto;
+  position: relative;
+  color: #FFF;
+  box-sizing: border-box;
+  animation: animloader 1s linear infinite alternate;
+}
+
+@keyframes animloader {
+  0% {
+    box-shadow: -38px -6px, -14px 6px,  14px -6px;
+  }
+  33% {
+    box-shadow: -38px 6px, -14px -6px,  14px 6px;
+  }
+  66% {
+    box-shadow: -38px -6px, -14px 6px, 14px -6px;
+  }
+  100% {
+    box-shadow: -38px 6px, -14px -6px, 14px 6px;
+  }
+}    
