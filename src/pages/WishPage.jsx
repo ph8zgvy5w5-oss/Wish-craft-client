@@ -1,8 +1,6 @@
-export default function Wishpage(){
 
-return(
-  <>
-  <h1>WishPage</h1>
-  </>
-)
+export default function WishPage() {
+  return (
+    <div>WishPage</div>
+  )
 }

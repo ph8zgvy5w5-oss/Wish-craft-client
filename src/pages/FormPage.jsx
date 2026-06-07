@@ -1,7 +1,6 @@
+
 export default function FormPage() {
   return (
-    <>
-      <h1>Calendar</h1>
-    </>
+    <div>FormPage</div>
   )
 }

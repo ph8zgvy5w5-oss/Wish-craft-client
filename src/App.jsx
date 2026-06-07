@@ -1,16 +1,15 @@
-import './index.css';
-import { Routes, Route } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import NotFound from "./pages/NotFound";
-import Calendar from "./pages/Calendar";
-import FormPage from "./pages/FormPage";
-import About from "./pages/About";
-import Profile from "./pages/Profile";
-import VisionBoard from "./pages/VisionBoard";
-import WishList from "./pages/WishList";
-import WishPage from "./pages/WishPage";
-import Navbar from "./components/Navbar";
-import Sidebar from './components/Sidebar';
+import './index.css'
+import { Routes, Route } from "react-router-dom"
+import HomePage from "./pages/HomePage"
+import NotFound from "./pages/NotFound"
+import Calendar from "./pages/Calendar"
+import FormPage from "./pages/FormPage"
+import About from "./pages/About"
+import Profile from "./pages/Profile"
+import VisionBoard from "./pages/VisionBoard"
+import WishListe from "./pages/WishList"
+import WishPage from "./pages/WishPage"
+
 function App() {
 
   return (
@@ -27,7 +26,7 @@ function App() {
         <Route path='/user' element={<Profile />} />
         <Route path='/board' element={<VisionBoard />} />
         <Route path='/calendar' element={<Calendar />} />
-        <Route path='/' element={<NotFound />} />
+        <Route path='/*' element={<NotFound />} />
       </Routes>
       </div>
     </>
