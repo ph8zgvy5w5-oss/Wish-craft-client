@@ -12,7 +12,9 @@ import WishPage from "../pages/WishPage"
 import EditWishPage from "../pages/EditWishPage"
 import {useState} from "react";
 import { BrowserRouter as Router } from 'react-router-dom'
-
+import Navbar from "./components/Navbar";
+import Sidebar from './components/Sidebar';
+import Footer from './components/Footer';
 
 function App() {
   const [wishes, setWishes] = useState ("");
@@ -22,7 +24,7 @@ function App() {
   };
 
   return (
-    <>
+    <Router>
       <div>Welcome to WishCraft</div>
       <Routes>
         <Route path='/' element={<HomePage />} />
@@ -36,8 +38,8 @@ function App() {
         <Route path='*' element={<NotFound />} />
         <Route path='/edit/:id' element={<EditWishPage/>} />
       </Routes>
-
-    </>
+      <Footer/>
+    </Router>
   )
 }
 
