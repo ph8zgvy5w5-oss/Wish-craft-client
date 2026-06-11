@@ -1,14 +1,27 @@
 import {useState} from "react";
+import {useWishContext} from "../src/context/Wish.context";
+import {useNavigate} from "react-router-dom";
 
-function WishForm ({createWish}) {
+function WishForm ({}) {
+
+    const {createWish} = useWishContext();
+    const navigate = useNavigate ();
+
+
     const [title, setTitle] = useState("");
     const [category,setCategory] = useState("");
     const [description, setDescription] = useState("");
     const [frequency, setFrequency] = useState("");
 
+    const handleSubmit = async (event) => {
+        event.preventDefault ();
+        await createWish ({title, category, description, frequency});
+        navigate ("/wishes");
+    };
+
     return (
 
-        <>
+        <form onSubmit = {handleSubmit}>
             <div>
                 <input
                     type="text"
@@ -26,6 +39,14 @@ function WishForm ({createWish}) {
             </div> 
 
             <div>
+                <input
+                    type="text"
+                    placeholder="Frequency"
+                    value={frequency}
+                    onChange={(event) => setFrequency(event.target.value)} />
+            </div> 
+
+            <div>
                 <textarea
                     placeholder="Description"
                     value={description}
@@ -33,8 +54,10 @@ function WishForm ({createWish}) {
                     
 
             </div>
-        </>
-    )
+            <button type ="submit" >Create Wish </button>
+            </form>
+    
+    );
 }
 
 export default WishForm;

@@ -15,6 +15,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import Navbar from "./components/Navbar";
 import Sidebar from './components/Sidebar';
 import Footer from './components/Footer';
+import WishProvider from './context/Wish.context'
 
 function App() {
   const [wishes, setWishes] = useState ("");
@@ -24,6 +25,7 @@ function App() {
   };
 
   return (
+    <WishProvider>
     <Router>
       <div>Welcome to WishCraft</div>
       <Routes>
@@ -40,6 +42,7 @@ function App() {
       </Routes>
       <Footer/>
     </Router>
+    </WishProvider>
   )
 }
 
