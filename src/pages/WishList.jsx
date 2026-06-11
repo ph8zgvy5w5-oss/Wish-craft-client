@@ -1,7 +1,7 @@
 //import LoadBar from "../components/LoadBar"
 import { useWishContext } from "../context/Wish.context"
 
-export default function WishList() {
+export default function WishList({wishes}) {
   //const {wishes} = useWishContext()
  // if(!wishes) return <LoadBar />
   return (
@@ -11,8 +11,15 @@ export default function WishList() {
   Longings for journeys, and corners to dream.<br />
   Leave your wishes here, hold the fleeting day,<br />
   And plant the seeds of tomorrow along the way...
-</p></div>
-wishes.map((wishList))
+</p>
+  <div>
+  {wishes.map((wishes) => (
+    <div>
+    <h2>{wishes.wishesTitle}</h2>
+    </div>
+    ))}
+    </div>
+</div>
     </div>
   )
 }
