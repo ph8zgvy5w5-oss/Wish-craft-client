@@ -1,6 +1,11 @@
+import WishForm from "../src/components/WishForm"
 
 export default function FormPage() {
   return (
-    <div>FormPage</div>
+    <div>
+      <h1> Create a Wish </h1>
+      <WishForm />
+
+    </div>
   )
 }

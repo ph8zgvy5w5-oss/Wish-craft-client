@@ -1,4 +1,3 @@
-
 import {useState} from "react";
 import {useWishContext} from "../src/context/Wish.context";
 import {useNavigate} from "react-router-dom";
