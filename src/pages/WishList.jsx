@@ -1,18 +1,33 @@
 //import LoadBar from "../components/LoadBar"
+import { WishContext } from "../context/Wish.context"
+import {useContext, useState, useEffect} from "react"
+import SearchBar from "../components/SearchBar"
 import { useWishContext } from "../context/Wish.context"
 
-export default function WishList() {
-  //const {wishes} = useWishContext()
+
+export default  function WishList() {
+
+  let res = useWishContext
+
+  let wishes = useContext(WishContext)
+  const [list, setList] = useState([])
+
+   console.log(`wishes resutlt`,wishes)
+
+  useEffect(() => {
+    setList(wishes.wishes)
+  },[])
+
+ 
+ 
  // if(!wishes) return <LoadBar />
   return (
-    <div className="text-red-300 text-2xl font-serif text-center font-stretch-ultra-condensed">Wonderfull dream to live
-    <div> <p className="text-sm text-center ">
-  Between the lines of our lives, quiet whispers gleam,<br />
-  Longings for journeys, and corners to dream.<br />
-  Leave your wishes here, hold the fleeting day,<br />
-  And plant the seeds of tomorrow along the way...
-</p></div>
-wishes.map((wishList))
-    </div>
+    <>
+    <div>WishList</div>
+    <SearchBar search={list} setList={setList} />
+   {useEffect(() => {
+     console.log(`list`,list)
+   },[list])}
+    </>
   )
 }

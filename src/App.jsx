@@ -25,6 +25,7 @@ function App() {
         <Route path='/wishes:id' element={<WishPage />} />
         <Route path='/wishes' element={<WishList />} />
         <Route path='/create' element={<FormPage />} />
+        <Route path='/create' element={<FormPage />} />
         <Route path='/user' element={<Profile />} />
         <Route path='/board' element={<VisionBoard />} />
         <Route path='/calendar' element={<Calendar />} />
