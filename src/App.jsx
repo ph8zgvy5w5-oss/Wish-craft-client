@@ -1,15 +1,15 @@
 import './index.css'
 import { Routes, Route } from "react-router-dom"
-import HomePage from "../pages/HomePage"
-import NotFound from "../pages/NotFound"
-import Calendar from "../pages/Calendar"
-import FormPage from "../pages/FormPage"
-import About from "../pages/About"
-import Profile from "../pages/Profile"
-import VisionBoard from "../pages/VisionBoard"
-import WishList from "../pages/WishList"
-import WishPage from "../pages/WishPage"
-import EditWishPage from "../pages/EditWishPage"
+import HomePage from "./pages/HomePage"
+import NotFound from "./pages/NotFound"
+import Calendar from "./pages/Calendar"
+import FormPage from "./pages/FormPage"
+import About from "./pages/About"
+import Profile from "./pages/Profile"
+import VisionBoard from "./pages/VisionBoard"
+import WishList from "./pages/WishList"
+import WishPage from "./pages/WishPage"
+import EditWishPage from "./pages/EditWishPage"
 import {useState} from "react";
 import { BrowserRouter as Router } from 'react-router-dom'
 import Navbar from "./components/Navbar";
@@ -27,7 +27,7 @@ function App() {
   return (
     <WishProvider>
     <Router>
-      <div>Welcome to WishCraft</div>
+      <Navbar />
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/pages/About' element={<About />} />

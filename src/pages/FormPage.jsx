@@ -1,4 +1,4 @@
-import WishForm from "../src/components/WishForm"
+import WishForm from "../components/WishForm"
 
 export default function FormPage() {
   return (
