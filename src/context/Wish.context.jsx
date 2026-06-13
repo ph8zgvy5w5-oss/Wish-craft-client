@@ -5,7 +5,7 @@ const WishContext = createContext();
 
 function WishProvider({ children }) {
   const [wishes, setWishes] = useState(null);
-  const categories = ["Travel", "Career", "Finance", "Personal Growth", "Learning", "Wellness"];
+  const categories = ["Travel", "Career", "Finance", "Tech","Personal Growth", "Learning", "Wellness", "Lifestyle", "Hobbies", "Mindset", "Creativity"];
   const frequencies = ["Daily", "Weekly", "Bi-weekly", "Monthly"];
 
   const getWishes = async () => {
@@ -66,5 +66,5 @@ function useWishContext() {
   return context;
 }
 
-export default { WishProvider };
+export default WishProvider ;
 export { WishContext, useWishContext };
