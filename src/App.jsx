@@ -7,7 +7,7 @@ import FormPage from "./pages/FormPage";
 import About from "./pages/About";
 import Profile from "./pages/Profile";
 import VisionBoard from "./pages/VisionBoard";
-import WishList from "./pages/WishList";
+import WishListPage from "./pages/WishList";
 import WishPage from "./pages/WishPage";
 import Navbar from "./components/Navbar";
 import Sidebar from './components/Sidebar';
@@ -22,8 +22,8 @@ function App() {
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/pages/About' element={<About />} />
-        <Route path='/wishes/:id' element={<WishPage />} />
-        <Route path='/wishes' element={<WishList />} />
+        <Route path='/wishes:id' element={<WishPage />} />
+        <Route path='/wishes' element={<WishListPage />} />
         <Route path='/create' element={<FormPage />} />
         <Route path='/update' element={<FormPage />} />
         <Route path='/user' element={<Profile />} />
