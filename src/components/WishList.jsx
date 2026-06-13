@@ -1,6 +1,6 @@
 import { useContext } from "react"
-import { WishContext } from "./src/context/Wish.context"
-import { useWishContext } from "./src/context/Wish.context"
+import { WishContext } from "../src/ontext/Wish.context"
+import { useWishContext } from "../src/context/Wish.context"
 
 export default function WishList() {
   const {wishes, deleteWish } = useWishContext()

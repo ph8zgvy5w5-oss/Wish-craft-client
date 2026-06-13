@@ -1,53 +1,70 @@
 import { createContext, useEffect, useState, useContext } from "react";
-import api from "../lib/api"
+import api from "../lib/api";
 
-const WishContext = createContext()
+const WishContext = createContext();
 
-export default function WishProvider({ children }) {
-    const [wishes, setWishes] = useState(null)
+function WishProvider({ children }) {
+  const [wishes, setWishes] = useState(null);
+  const categories = ["Travel", "Career", "Finance", "Personal Growth", "Learning", "Wellness"];
+  const frequencies = ["Daily", "Weekly", "Bi-weekly", "Monthly"];
 
-    const getWishes = async () => {
-        try {
-            const response = await api.get("/wishes")
-            console.log(response.data)
-            setWishes(response.data)
-        } catch (error) {
-            console.log(error)
-        }
-    };
-
-    const createWish = async (wishData) => {
-        try {
-            await api.post("/wishes", wishData)
-            getWishes()
-        } catch (error) {
-            console.log(error)
-        }
-    };
-
-    useEffect(() => {
-        getWishes()
-    }, [])
-    
-
-    const deleteWish =async (id) => {
-        try {
-            await api.delete (`/wishes/${id}`);
-            getWishes ();
-
-        } catch (error) {
-            console.log (error);
-        }
+  const getWishes = async () => {
+    try {
+      const response = await api.get("/wishes");
+      console.log(response.data);
+      setWishes(response.data);
+    } catch (error) {
+      console.log(error);
     }
+  };
 
-    return (<WishContext.Provider value={{ wishes, createWish, deleteWish}}>{children}</WishContext.Provider>)
-};
+  const createWish = async (wishData) => {
+    try {
+      await api.post("/wishes", wishData);
+      getWishes();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const deleteWish = async (id) => {
+    try {
+      await api.delete(`/wishes/${id}`);
+      getWishes();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const updateWish = async (id, wishData) => {
+    try {
+      await api.put(`/wishes/${id}`, wishData);
+      getWishes();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getWishes();
+  }, []);
+
+  return (
+    <WishContext.Provider
+      value={{ wishes, createWish, deleteWish, updateWish, categories, frequencies }}
+    >
+      {children}
+    </WishContext.Provider>
+  );
+}
 
 function useWishContext() {
-    const context = useContext(WishContext)
-    if (!context) {
-        return
-    }
-    return context
+  const context = useContext(WishContext);
+  if (!context) {
+    throw new Error("useWishContext must be used within a WishProvider");
+  }
+  return context;
 }
-export { WishContext, useWishContext }
+
+export default { WishProvider };
+export { WishContext, useWishContext };
