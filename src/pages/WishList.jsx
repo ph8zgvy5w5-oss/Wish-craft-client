@@ -1,33 +1,32 @@
 //import LoadBar from "../components/LoadBar"
 import { WishContext } from "../context/Wish.context"
-import {useContext, useState, useEffect} from "react"
+import { useContext, useState, useEffect } from "react"
 import SearchBar from "../components/SearchBar"
-import { useWishContext } from "../context/Wish.context"
+import FilterBar from "../components/FilterBar"
 
-
-export default  function WishList() {
-
-  let res = useWishContext
-
-  let wishes = useContext(WishContext)
-  const [list, setList] = useState([])
-
-   console.log(`wishes resutlt`,wishes)
+export default function WishList() {
+  const { wishes } = useContext(WishContext)
+  const [wishList, setWishList] = useState([])
+  const [search, setSearch] = useState([])
+  const categories = ["All","tech", "lifestyle", "travel", "creativity"]
 
   useEffect(() => {
-    setList(wishes.wishes)
-  },[])
+    if (Array.isArray(wishes)) {
+      setWishList(wishes)
+    }
+  }, [wishes])
 
+  console.log(`wishes result`, search)
+
+ 
  
  
  // if(!wishes) return <LoadBar />
   return (
-    <>
-    <div>WishList</div>
-    <SearchBar search={list} setList={setList} />
-   {useEffect(() => {
-     console.log(`list`,list)
-   },[list])}
-    </>
+    < div className= "flex flex-col  w-full justify-center h-fit p-8" >
+    
+    <SearchBar wishList={wishList} setSearch={setSearch}  />
+    <FilterBar filter={search} setFilter={setSearch} list={wishList} categories={categories} />
+    </div>
   )
 }

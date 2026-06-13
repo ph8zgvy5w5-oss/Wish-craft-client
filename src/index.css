@@ -49,7 +49,7 @@
 
 
 body {
-    background-color: #D8E2DC;
+    background-color: #D8E2DC;box-sizing: border-box; 
 }
 
 a{align-self:center}

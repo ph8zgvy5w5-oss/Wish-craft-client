@@ -17,15 +17,15 @@ function App() {
   return (
     <>
       <Navbar/>
-      <div className='flex h-screen w-full bg-seashell'>
+      <div className='flex  w-full bg-seashell'>
       <Sidebar/>
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/pages/About' element={<About />} />
-        <Route path='/wishes:id' element={<WishPage />} />
+        <Route path='/wishes/:id' element={<WishPage />} />
         <Route path='/wishes' element={<WishList />} />
         <Route path='/create' element={<FormPage />} />
-        <Route path='/create' element={<FormPage />} />
+        <Route path='/update' element={<FormPage />} />
         <Route path='/user' element={<Profile />} />
         <Route path='/board' element={<VisionBoard />} />
         <Route path='/calendar' element={<Calendar />} />
