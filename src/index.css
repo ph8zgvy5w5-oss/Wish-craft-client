@@ -48,9 +48,9 @@
 }
 
 
-body {
+/* body {
     background-color: #D8E2DC;
-}
+} */
 
 a{align-self:center}
 .loader {
@@ -79,3 +79,5 @@ a{align-self:center}
     box-shadow: -38px 6px, -14px -6px, 14px 6px;
   }
 }    
+
+

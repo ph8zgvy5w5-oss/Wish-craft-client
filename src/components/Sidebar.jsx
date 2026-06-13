@@ -4,7 +4,7 @@ import Button from "./ui/Button";
 export default function Sidebar(){
 
 return(
-  <div className="flex flex-col h-screen w-auto min-w-[200px] gap-2 pl-4 p-8 pb-5">
+  <div className="flex flex-col h-screen w-auto `min-w-50` gap-2 pl-4 p-8 pb-5">
   <Link to="/board" className="font-bold hover:bg-soft-blush hover:border-r-2 hover:border-pink-950 rounded-6 p-2 w-full">Vision Board</Link>
   <Link to="/wishes?status=active" className="font-bold hover:bg-soft-blush  hover:border-r-2 hover:border-pink-950 rounded-6 p-2 w-full">Active Wishes</Link>
   <Link to="/wishes" className="font-bold hover:bg-soft-blush hover:border-r-2 hover:border-pink-950 rounded-6 p-2 w-full">All Wishes</Link>
