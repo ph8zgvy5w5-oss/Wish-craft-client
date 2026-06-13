@@ -23,15 +23,7 @@ export default function WishPage() {
  const [habits, setHabits] = useState([])
 
 
- /* unction getTotalProgress() {
-   let habits = item.habits
-   habits.reduce(( acc, current)=>{
-    acc += current.timeObjective
-    return acc 
-   },0 )
- return habits 
-  }
-  */
+
  
  
    const getTotalProgress =()=> {
